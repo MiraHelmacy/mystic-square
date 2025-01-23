@@ -531,7 +531,7 @@ var RunCmd = &cobra.Command{
 	Long:  `Chose a difficulty and an algorithm to solve the problem`,
 	RunE: func(cmd *cobra.Command, args []string) (err error) {
 		if cliArgs, argsValid := NewRunCliArgs(); argsValid {
-			executeRun(cliArgs)
+			err = executeRun(cliArgs)
 		} else {
 			err = fmt.Errorf("args not valid")
 		}
